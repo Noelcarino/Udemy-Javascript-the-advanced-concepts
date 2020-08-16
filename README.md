@@ -1,7 +1,7 @@
-** Signed up for Udemy class to review and solidify my JavaScript knowledge.
-** Made this repository to hold on to my notes
-** My goal for this course is to learn/review 1 section a day
-** Below is the Table of Contents / Overview for the course
+- Signed up for Udemy class to review and solidify my JavaScript knowledge.
+- Made this repository to hold on to my notes
+- My goal for this course is to learn/review 1 section a day
+- Below is the Table of Contents / Overview for the course
 
 ## Course Content
 - [x] - [8/16] Section 1: Introduction
