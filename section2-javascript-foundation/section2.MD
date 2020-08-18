@@ -59,4 +59,20 @@
   - Having other browsers agree on an executable format to run JavaScript lead to browsers not getting along.
   - 'WebAssembly' is a standard binary executable format.
   
-  
+### Call Stack and Memory Heap
+  - We need a place to store and write information (store our variables, objects, data of apps).
+  - We need a place to run and keep track of whats happening line by line in our code.
+  - 'Memory Heap' place to store and write information.
+  - 'Call Stack' plae to run and keep track of whats happening.
+  - 'Memory Heap' where memory allocation happens.
+  - 'Call Stack' is where the engine keeps track of where code is in execution.
+  - When defining a number, we are allocating memory for the number
+  - When defining a string, we are allocating memory for the string
+  - When defining an object, we are allocating memory for object and its values.
+  - 'Memory Heap' is a simply a free store, large region in memory provided by JS Engine.
+  - Whenever a function is being called, it checks allocated memory for function, then adds function to call stack that operates in 'First In Last Out' mode
+
+
+
+
+
