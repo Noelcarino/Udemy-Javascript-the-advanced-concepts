@@ -48,7 +48,11 @@
   - Optimzed Code: 
   
   
-  
+### Writing Optimized Code
+  - 'inline caching' optimizes code that is run multiple times.
+  - 'Hidden Classes'
+  - When instantiating object properties, we want to make sure it is in the same order.
+  - Key take away from these is to write code that is predictable.
   
   
   
