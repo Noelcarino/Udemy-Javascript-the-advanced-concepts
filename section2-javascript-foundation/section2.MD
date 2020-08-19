@@ -154,3 +154,9 @@ function removeItemsFromList() {
 removeItemsFromList();
 ```
 
+### Section Review
+  - JavaScript Engine runs a JS File through Parser, AST, Interpreter, Profiler, Compiler, then spits out Optimzed Code for computer to read.
+  - Call Stack and Memory Heaps are used to execute code.
+  - We can use the call stack to keep track of where we are in our program.
+  - JavaScript is a single threaded language, one call stack, one memory heap.
+  - Because it is a single threaded language, it allows us to have threads in the background (on browser, or outside)
