@@ -72,6 +72,12 @@
   - 'Memory Heap' is a simply a free store, large region in memory provided by JS Engine.
   - Whenever a function is being called, it checks allocated memory for function, then adds function to call stack that operates in 'First In Last Out' mode
 
+### Stack Overflow
+  - 'Stack Overflow' is when happens when you call a function within a function over and over
+  - 'Recursion' is a function that calls itself, it is also an example of creating a Stack Overflow
+  - Back in the day, when the call stack kept increasing / stack overflow happened, the browser would crash. Now there is a maximum call stack size.
+
+
 
 
 
