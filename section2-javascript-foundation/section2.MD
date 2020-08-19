@@ -77,6 +77,14 @@
   - 'Recursion' is a function that calls itself, it is also an example of creating a Stack Overflow
   - Back in the day, when the call stack kept increasing / stack overflow happened, the browser would crash. Now there is a maximum call stack size.
 
+### Garbage Collection
+  - JavaScript is a garbage collected language, meaning when JavaScript allocates memory, it cleans up the used allocated memory when its done being used.
+  - Allocated memory is cleaned up because of limited memory.
+  - In a low level language like C, you control the memory waste managment, which is dangerous / and also why the language is fast and memory efficient.
+  - Having control of memory waste management allows you to optimize it.
+  - If we define a variable inside a function, the variable will be marked and sweeped once the call stack is done.
+  
+
 
 
 
