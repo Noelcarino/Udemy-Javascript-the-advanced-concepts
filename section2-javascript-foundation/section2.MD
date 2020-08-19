@@ -103,3 +103,16 @@
   - It will make it really difficult if we have long running tasks.
   - An example is Twitter, running on one function. We can reveal this by adding the alert function to the call stack. 
 
+### JavaScript Runtime
+  - JavaScript is a single threaded programming language, it only has one stack, one heap.
+  - If any other program wants to execute something, it has to wait until the previous program is finished executing.
+  - Web Browser is working in the background while synchronous JavaScript code is running.
+  - Web API is being used to communicate
+  - The window object is provided by the browser.
+  - Browsers use low level programming languages in the background. 
+  - Web APIs are asynchronous, meaning, we can instruct the APIs to do something in the background and return data.
+  - The setTimeout function is sent to the web API instead of the call stack.
+  - After the function is done being sent to the Web API, it is then sent to the Callback Queue
+  - Now matter how fast setTimeout wil execute, it still must be sent to the WebAPI, and then sent to the Callback queue.
+  
+  
