@@ -114,5 +114,43 @@
   - The setTimeout function is sent to the web API instead of the call stack.
   - After the function is done being sent to the Web API, it is then sent to the Callback Queue
   - Now matter how fast setTimeout wil execute, it still must be sent to the WebAPI, and then sent to the Callback queue.
-  
-  
+
+### Node.js
+  - Node.js is a JavaScript runtime build on Chrome's V8
+  - Node.js uses google's V8 engine to understand JavaScript
+  - Node.js does not have an object 'window' like the browser. Instead, it has an object 'global'. That's it's global API
+  - 'Global' is Node.js API
+  - Node.js is considered a server side language because it uses JavaScript outside of the browser
+
+### Exercise: Fix the Code
+  - This recursive function creates a stack overflow. How can you fix this code by still keeping the recursive call around, but only adding something that you have learned in this section to not cause this stack overflow.
+
+```
+const list = new Array(60000).join('1.1').split('.');
+ 
+function removeItemsFromList() {
+    var item = list.pop();
+ 
+    if (item) {
+        removeItemsFromList();
+    }
+};
+ 
+removeItemsFromList();
+```
+  - The solution: We add a function from the Window Object to send the function from the Call Stack to the Web API.
+
+```
+const list = new Array(60000).join('1.1').split('.');
+
+function removeItemsFromList() {
+    var item = list.pop();
+
+    if (item) {
+      setTimeout(removeItemsFromList, 0);
+    }
+};
+
+removeItemsFromList();
+```
+
