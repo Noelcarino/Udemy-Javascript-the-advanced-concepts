@@ -83,10 +83,23 @@
   - In a low level language like C, you control the memory waste managment, which is dangerous / and also why the language is fast and memory efficient.
   - Having control of memory waste management allows you to optimize it.
   - If we define a variable inside a function, the variable will be marked and sweeped once the call stack is done.
+
+### Memory Leaks
+  - An example of creating a memory leak is an endless for loop that continues pushing into an array.
+  - There are three common memory leaks: Global Variables, Event Listeners, setIntervals
+  - 'Global Variables' - We don't want too many global variables because too much memory will be allocated.
+  - 'Event Listeners' - Event listeners are continously added in the background, never removed when we don't need them.
+  - As users goes back and forth between single page applications, event listeners are continously added, not removed.
+  - 'setInterval' - if setinterval is not cleared / keeps running, the objects being referenced inside the function will never be cleared for allocated memory.
+  - An real world example is SoundCloud's incident. They had an application that worked on a gaming device which allowed it to run in the background of the game console.
+  - Because the application wasn't closed for hours, the memory leak kept increasing. 
   
+### Single Threaded
+  - JavaScript is a single threaded language, meaning only one set of instructions is executed at a time.
+  - One way to check if a language is single threaded is how many call stacks it has. JavaScript only has one call stack.
 
-
-
-
-
+### Exercise: Issue with Single threaded Code
+  - What problems do you see with synchronous code?
+  - It will make it really difficult if we have long running tasks.
+  - An example is Twitter, running on one function. We can reveal this by adding the alert function to the call stack. 
 
