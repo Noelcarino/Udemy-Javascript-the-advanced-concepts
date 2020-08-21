@@ -8,3 +8,9 @@
   - Creation phase is the first phase in the JavaScript engine.
   - Execution phase is the 2nd phase in the JavaScript engine.
   
+### Lexical Enviornment
+  - Lexical Environment is simply where we write something.
+  - Lexical Analysis is when the JS Engine checks where the code was written.
+  - In JavaScript our lexical scope (available data + variables where the function was defined) determines our available variables. Not here the function is called (dynamic scope)
+  - Global Lexical environment is the very first lexical environment.
+
