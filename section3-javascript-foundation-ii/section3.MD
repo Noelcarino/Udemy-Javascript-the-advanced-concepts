@@ -71,5 +71,11 @@
   ```
   - The reasoning is because the second function declaration of littleBrother is hoisted to the top of the function declaration bigBrother 
   
-  
+### Function Invocation
+  - A function declaration is a function that starts with a function keyword
+  - A function declaration is defined at parse time, when compiler is initially looking at code, and hoisting/allocating memory
+  - A function expression is a function that starts with the var keyword
+  - A function expression is defined at runtime
+  - A function invocation is simply running/calling a function
+   
   
