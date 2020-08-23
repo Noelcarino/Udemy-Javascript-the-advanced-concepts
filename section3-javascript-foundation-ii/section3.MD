@@ -78,4 +78,11 @@
   - A function expression is defined at runtime
   - A function invocation is simply running/calling a function
    
+### Arguments
+  - Instead of using 'arguments', we can use the 'Array.from(arguments)' to change arguments into an array, which allows us to use array methods.
+  - In each execution context, we create a new 'arguments' object.
   
+### Variable Environment
+  - Execution context also contains a variable environment.
+  - variable environment is where information is stored
+  - Each execution context has its own variable environment.
