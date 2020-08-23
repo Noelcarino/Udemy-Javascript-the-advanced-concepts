@@ -20,4 +20,56 @@
   - If we console a variable before we define it, it is undefined.
   - If we console a function before we define it, it is defined because of hoisting.
   - Hoisting is the JavaScript engine allocating memory for the variables and functions that it sees in our code during creation phase, before its executed.
-  - 
+  - If there is a '()' surrounding the defined function, it won't hoist the function.
+  - 'const' and 'let' are not hoisted.
+  - 'Function Expression' is a function defined by a variable
+  - 'Function Declaration' is a regular defined function
+  
+### Exercise: Hoisting 1, 2, & 3
+
+  Code:
+  ```
+  var favoriteFood = "grapes";
+  var foodThoughts = function(){
+    console.log("Original favourite food: " + favouriteFood);
+    
+    var favouriteFood = "sushi";
+    
+    cosole.log("New favourite fooD: " + favouriteFood);
+  };
+  
+  foodThoughts();
+  ```
+  
+  Execution:
+  - The code will display:
+  ```
+    Original favourite food: undefined
+    New favourite food: sushi
+  ```
+  - The reasoning is because inside the function expression, favouriteFood is hoisted and set as undefined, then the code console is executed with favouriteFood as 'undefined'
+  
+  Code:
+  ```
+  function bigBrother(){
+    function littleBrother() {
+      return 'it is me!';
+    }
+    return littleBrother();
+    function littleBrother() {
+      return 'no me!';
+    }
+  }
+
+  // Before running this code, what do you think the output is?
+  bigBrother();
+  ```
+  
+  Answer:
+  ```
+    'no me!';
+  ```
+  - The reasoning is because the second function declaration of littleBrother is hoisted to the top of the function declaration bigBrother 
+  
+  
+  
