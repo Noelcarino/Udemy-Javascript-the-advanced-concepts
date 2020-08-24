@@ -86,3 +86,69 @@
   - Execution context also contains a variable environment.
   - variable environment is where information is stored
   - Each execution context has its own variable environment.
+
+### Scope Chain
+  - Each execution context has a link to its parent (outer environment)
+  - Each function has their own variable environment
+  - Each variable environment has a 'scope chain', gives us access to parent chain (global environment)
+  - In JavaScript our lexical scope (available data + variables where the function was defined) determines our available variables. Not where the function is called (dynamic scope)
+  - If a function returns a function, we can add another parenthesis too the end of the function we called -> sayMyName()()
+
+### [[scope]]
+  - When a function is called, an environment is created for the new scope it enters.
+  - If we defined a function, we can find that function within [[scopes]], where we can find the type of scope it is in.
+
+### Exercise: JS is Weird
+  - 'use strict' prevents variable leakages
+  - In a case where we use 'use strict', we would use it to prevent variables not defined using 'var'.
+  - Example 1:
+  
+  ```
+    function weird() {
+      height = 50;
+      return height
+    }
+    weird()
+  ```
+  - returns 50.
+  - adding 'use strict' example
+  ```
+    'use strict'
+    function weird() {
+      height = 50;
+      return height
+    }
+    weird()
+  ```
+  - returns 'ReferenceError: height is not defined'
+  
+  -Example 2:
+  ```
+    var heyhey = function doodle() {
+      // do something
+      return 'heyhey'
+    }
+    heyhey()
+  ```
+  - returns 'heyhey'
+  - but running 'doodle()' returns 'ReferenceError: doodle is not defined, because doodle is added to its own execution context variable environment
+
+### Function Scope vs Block Scope
+  - To be Functionaly scoped means that any time we have a function, JavaScript creates a new environment. 
+  - To be Block scoped means that we cannot access we cannot access anything within '{}'.
+  
+### Exercise: Block Scope
+  ``` 
+    function loop() {
+      for (let i = 5; i < 5; i++){
+        console.log(i)
+      }
+      console.log('final', i)
+    }
+    loop()
+  ```
+  - returns i is not defined. 
+  - this is the case because of the 'let' keyword. 'i' is only defined within the block scope
+  
+### IIFE
+  - 
