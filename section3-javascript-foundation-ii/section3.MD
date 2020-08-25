@@ -151,4 +151,28 @@
   - this is the case because of the 'let' keyword. 'i' is only defined within the block scope
   
 ### IIFE
-  - 
+  - Immediately Invoked Function Expression:
+    ```
+    (function(){
+
+    })();
+    ```
+  - IIFE alows us to call immediately as JS is executing
+
+### this Keyword
+  - 'this' is the object that the function is a property of
+  - When we do something inside of a function, we have access to the 'this' keyword
+  - we don't want 'this' to refer to the global object, rather the function that it is in, we can add 'use strict' to fix that
+  - example of using 'this' keyword
+  ```
+    cont obj = {
+      name: 'Billy',
+      sing: function() {
+        return 'lalala ' + this.name
+      },
+      singAgain(){
+        return this.sing() + this.name + '!'
+      }
+    }
+  ```
+   
