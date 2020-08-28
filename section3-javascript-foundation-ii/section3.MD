@@ -175,4 +175,61 @@
       }
     }
   ```
-   
+  - Example 2
+  ```
+    function importantPerson(){
+      console.log(this.name+'!')
+    }
+    
+    const name = 'Sunny';
+    const obj1 = {
+      name: 'Cassy',
+      importantPerson: importantPerson
+    }
+    const obj2 = {
+      name: 'Jacob',
+      importantPerson: importantPerson
+    }
+  ```
+  - We can access obj1 and obj2 'importantPerson' using [obj1.importantPerson || obj2.importantPerson]
+
+### Exercise: Dynamic Scope vs Lexical Scope
+  - Exercise 1
+  ```
+    const a = function() {
+      console.log('a',this)
+      const b = function() {
+        console.log('b',this)
+        const c = {
+           hi: function() {
+           console.log('c', this)
+          }
+        }
+      }
+    }
+  ```
+  
+        c.hi()
+      }
+      b()
+    }
+    a()
+  ```
+  - Exercise 2
+  ```
+    const obj = {
+      name: 'Billy',
+      sing() {
+        console.log('a', this);
+        var anotherFunc = function(){
+          console.log('b', this)
+        }
+        anotherFunc()
+      }
+    }
+  ```
+  - calling obj.sing() returns the obj of the function we called, however, 'anotherFunc()' returns this window.
+  - 'this' keyword is not lexically scoped. Means it doesnt matter where it was written, but how it was called.
+  - In JavaScript our lexical scope (available data + variables where the function was defined) determines our available variables. Not where the function is called (dynamic scope)
+  - Everything in JavaScript is lexically scoped, except for 'this' keyword
+  - 'Arrow Functions' help fix the behavior of 'this'. It will lexically bind the 'this' keyword
