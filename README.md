@@ -6,7 +6,7 @@
 ## Course Content
 - [x] - [8/16] Section 1: Introduction
 - [x] - [8/19] Section 2: JavaScript Foundation
-- [ ] - Section 3: JavaScript Foundation II
+- [x] - [8/30] Section 3: JavaScript Foundation II
 - [ ] - Section 4: Types in JavaScript
 - [ ] - Section 5: The 2 Pillars: Closures and Prototypal Inheritance
 - [ ] - Section 6: Object Oriented Programming
