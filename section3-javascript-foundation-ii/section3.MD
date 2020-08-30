@@ -205,10 +205,6 @@
            console.log('c', this)
           }
         }
-      }
-    }
-  ```
-  
         c.hi()
       }
       b()
@@ -233,3 +229,48 @@
   - In JavaScript our lexical scope (available data + variables where the function was defined) determines our available variables. Not where the function is called (dynamic scope)
   - Everything in JavaScript is lexically scoped, except for 'this' keyword
   - 'Arrow Functions' help fix the behavior of 'this'. It will lexically bind the 'this' keyword
+
+### call(), apply(), bind()
+  - 'call()' is what happens under the hood of JavaScript when a function is called
+  - 'apply()' is what happens under the hood of JavaScript when a function is called 
+  - Example
+  ```
+    const wizard = {
+      name: 'Merlin',
+      health: 50,
+      heal(num1, num2) {
+        return this.health += num1 + num2;
+      ]
+    }
+    
+    const archer = {
+      name: 'Robind Hood',
+      health: 30
+    }
+    console.log('1', archer)  ->  {name: 'Robin Hood', health: 30}
+    wizard.heal.call(archer, 50, 30) 
+    console.log('2', archer)  ->  {name: 'Robin Hood', health: 110}
+  ```
+  - the difference between call() and apply() is that apply will take in an array of parameters.
+  - unlinke call() and apply(), bind() returns a function. allows us to store the 'this' keyword for later use.
+
+### Exercise: call(), apply()
+  How would you implement this:
+  ```
+    const array = [1,2,3];
+    
+    function getMaxNumber(arr){
+      //code here
+    }
+    
+    getMaxNumber(array) // should return 3
+  ```
+  my solution:
+  ```
+    const array = [1,2,3];
+    function getMaxNumber(arr){
+      return Math.max.apply(null,arr);
+    }
+    getMaxNumber(arra)
+  ```
+
