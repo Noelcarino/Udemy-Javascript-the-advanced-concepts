@@ -274,3 +274,51 @@
     getMaxNumber(arra)
   ```
 
+### bind() and currying
+  - currying refers to only partially giving a function a paramter
+
+### Exercise: this keyword
+  ```
+    var b = {
+      name: 'jay',
+      say() {console.log(this)}
+    }
+    var c = {
+      name: 'jay',
+      say() {return function() {console.log(this)}}
+    }
+    var d = {
+      name: 'jay',
+      say() {return () => console.log(this)}}
+    }
+    
+    b.say()   -> {name: 'jay', say: [Function] }
+    c.say()   -> [Function]
+    c.say()() -> returns the window object
+    d.say()   -> [Function]
+    d.say()() -> {name: 'jay', say: [Function] }
+  ```
+
+### Exercise: this keyword 2
+  ```
+    const character = {
+      name: 'Simon',
+      getCharacter() {
+        return this.name;
+      }
+    };
+    const giveMeTheCharacterNOW = character.getCharacter;
+    
+    //How would you fix this?
+    console.log('?', giveMeTheCharacterNOW()); //this should return 'Simon' but doesnt'
+  ```
+  - we need to bind the 'getCharacter' function to giveMeTheCharacterNOW to use the function of another object.
+  - solution:
+  ```
+    const giveMeTheCharacterNOW = character.getCharacter.bind(character);
+  ```
+
+### Context vs Scope
+  - scope means what is the variable access/environment when it is invoked
+  - context says, what is the value of the 'this' keyword
+  - context determined by how a function is invoked with the value of 'this' keyword
