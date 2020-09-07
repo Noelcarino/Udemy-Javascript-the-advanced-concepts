@@ -68,3 +68,7 @@
     a
   ```
   - The values are being passed inside the function and a new space in memory is being allocated but not reassigned to the original global value. The global values stay the same.
+
+### Type Coercion
+  - 'Type Coercion' the language converting a certain type to another type
+  - Do all languages have type coercion? - Yes.
