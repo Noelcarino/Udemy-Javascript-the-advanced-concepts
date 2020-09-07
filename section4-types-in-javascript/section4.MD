@@ -32,3 +32,39 @@
     let superClone = JSON.parse(JSON.stringify(obj));
   ```
   
+### Exercise: Compare Objects
+  - How would you compare two objects if they are pointing to a different location in memory but still have the same properties?
+
+### Exercise: Pass By Reference 
+  ```
+    const number = 100
+    const string = "Jay"
+    let obj1 = {
+      value: "a"
+    }
+    let obj2 = {
+      value: "b"
+    }
+    let obj3 = obj2;
+
+    function change(number, string, obj1, obj2) {
+        number = number * 10;
+        string = "Pete";
+        obj1 = obj2;
+        obj2.value = "c";
+    }
+
+    change(number, string, obj1, obj2);
+
+    //Guess the outputs here before you run the code: 
+    console.log(number); 
+    console.log(string);
+    console.log(obj1.value);
+  ```
+  Solution:
+  ```
+    100
+    Jay
+    a
+  ```
+  - The values are being passed inside the function and a new space in memory is being allocated but not reassigned to the original global value. The global values stay the same.
