@@ -72,6 +72,15 @@
 ### Type Coercion
   - 'Type Coercion' the language converting a certain type to another type
   - Do all languages have type coercion? - Yes.
+  - Examples of Type Coercion
   ```
-    1 === '1'
+    1 === '1' // returns true
+    
+    if (1) {
+      return 5;
+    }
+    
+    -0 === + 0 // returns true
+    
+    Object.is(-0,+0) // returns false
   ```
