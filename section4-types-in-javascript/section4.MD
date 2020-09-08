@@ -72,3 +72,6 @@
 ### Type Coercion
   - 'Type Coercion' the language converting a certain type to another type
   - Do all languages have type coercion? - Yes.
+  ```
+    1 === '1'
+  ```
